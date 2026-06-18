@@ -237,6 +237,18 @@ footer p span { color: rgba(255,250,246,0.88); }
 .event-aside { margin-top: 14px; }
 .event-aside img { width: 100%; max-width: 280px; border-radius: 8px; display: block; }
 
+/* MENU CARD */
+.menu-card { margin-top: 10px; border: 1.5px solid var(--sand); border-radius: 10px; overflow: hidden; }
+.menu-item { padding: 11px 14px; border-bottom: 1px solid var(--sand-light); background: var(--cream); }
+.menu-item:last-child { border-bottom: none; }
+.menu-item-name { font-size: 0.8rem; font-weight: 700; color: var(--text); }
+.menu-item-desc { font-size: 0.76rem; color: var(--text-mid); line-height: 1.5; margin-top: 2px; }
+
+/* FORM VALIDATION */
+.form-error { display: none; background: #FFF0EE; border: 1.5px solid var(--terra); border-radius: 8px; padding: 12px 16px; font-size: 0.88rem; color: var(--terra-deep); margin-bottom: 20px; font-weight: 600; }
+.form-error.show { display: block; }
+.radio-opt.radio-error { border-color: var(--terra); background: #FFF0EE; }
+
 /* RESPONSIVE */
 @media (max-width: 960px) {
   .apt-grid { grid-template-columns: repeat(2, 1fr); }
@@ -282,7 +294,7 @@ footer p span { color: rgba(255,250,246,0.88); }
   <div class="hero-pills">
     <span class="pill">Thu 9 · Arrive</span>
     <span class="pill">Fri 10 · NAO Beach Club</span>
-    <span class="pill">Sat 11 · Ocean Beach Club</span>
+    <span class="pill">Sat 11 · Padel &amp; Ocean Beach Club</span>
     <span class="pill">Sun · Depart</span>
   </div>
 </section>
@@ -596,7 +608,7 @@ footer p span { color: rgba(255,250,246,0.88); }
       <div class="form-grid">
         <div class="field fg-full">
           <label for="f-dietary">Dietary Requirements</label>
-          <input type="text" id="f-dietary" placeholder="Any allergies or restrictions (leave blank if none)">
+          <input type="text" id="f-dietary" placeholder="Any allergies or restrictions — type 'None' if none">
         </div>
         <div class="field fg-full">
           <label>Playing Padel on Saturday morning?</label>
@@ -623,6 +635,62 @@ footer p span { color: rgba(255,250,246,0.88); }
         </div>
       </div>
 
+      <span class="form-section-label">La Sala Dinner — Thursday</span>
+      <div class="form-grid">
+        <div class="field fg-full">
+          <label for="f-starter">Starter</label>
+          <select id="f-starter">
+            <option value="" disabled selected>Select your starter</option>
+            <option value="Langostine Pil Pil">Langostine Pil Pil</option>
+            <option value="Red Tuna Tartare">Red Tuna Tartare</option>
+            <option value="Crispy Vegan 'Beef' Salad">Crispy Vegan 'Beef' Salad</option>
+          </select>
+          <div class="menu-card">
+            <div class="menu-item">
+              <div class="menu-item-name">Langostine Pil Pil</div>
+              <div class="menu-item-desc">Cooked with fresh chilli, garlic, smoked paprika, parsley, white wine, served with bread</div>
+            </div>
+            <div class="menu-item">
+              <div class="menu-item-name">Red Tuna Tartare</div>
+              <div class="menu-item-desc">Marinated in sesame oil, wasabi, ginger, served with sliced truffle, avocado, mango, wakame seaweed and toasted bread</div>
+            </div>
+            <div class="menu-item">
+              <div class="menu-item-name">Crispy Vegan 'Beef' Salad</div>
+              <div class="menu-item-desc">With Heura, stir-fried vegetables and a soy, chilli and coriander dressing</div>
+            </div>
+          </div>
+        </div>
+        <div class="field fg-full">
+          <label for="f-entree">Entrée</label>
+          <select id="f-entree">
+            <option value="" disabled selected>Select your entrée</option>
+            <option value="Thai Green Curry — Vegetables">Thai Green Curry — Vegetables</option>
+            <option value="Thai Green Curry — Chicken">Thai Green Curry — Chicken</option>
+            <option value="Chargrilled Fillet Steak">Chargrilled Fillet Steak</option>
+            <option value="Full Rack BBQ Pork Ribs">Full Rack BBQ Pork Ribs</option>
+          </select>
+          <div class="menu-card">
+            <div class="menu-item">
+              <div class="menu-item-name">Thai Green Curry — Vegetables</div>
+              <div class="menu-item-desc">Authentic homemade Thai green curry with vegetables, served with steamed basmati rice</div>
+            </div>
+            <div class="menu-item">
+              <div class="menu-item-name">Thai Green Curry — Chicken</div>
+              <div class="menu-item-desc">Authentic homemade Thai green curry with chicken, served with steamed basmati rice</div>
+            </div>
+            <div class="menu-item">
+              <div class="menu-item-name">Chargrilled Fillet Steak</div>
+              <div class="menu-item-desc">Topped with garlic butter and rock salt, served with french fries, cherry tomatoes, mushrooms, and béarnaise sauce</div>
+            </div>
+            <div class="menu-item">
+              <div class="menu-item-name">Full Rack BBQ Pork Ribs</div>
+              <div class="menu-item-desc">Served with french fries, onion rings, and homemade coleslaw</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-error" id="form-error">Please fill in all fields before submitting.</div>
       <div class="form-actions">
         <button class="btn-submit" id="submit-btn" onclick="handleSubmit()">Submit My Details</button>
       </div>
@@ -638,7 +706,6 @@ footer p span { color: rgba(255,250,246,0.88); }
 </footer>
 
 <script>
-  // Replace this with your deployed Google Apps Script URL
   const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbx1M2bUjQ32WFWH2wPcvNxDLqOr7qg40Ay9oRRT4dtUYETgL_CidwrBKt9JA88wLxr8/exec';
 
   function handleLiquorChange(select) {
@@ -647,20 +714,49 @@ footer p span { color: rgba(255,250,246,0.88); }
     if (select.value !== 'Other') document.getElementById('f-liquor-other').value = '';
   }
 
+  function validateForm() {
+    let valid = true;
+    document.querySelectorAll('.error').forEach(el => el.classList.remove('error'));
+    document.querySelectorAll('.radio-error').forEach(el => el.classList.remove('radio-error'));
+    document.getElementById('form-error').classList.remove('show');
+
+    const requiredIds = ['f-name','f-arr-num','f-arr-date','f-arr-time','f-dep-num','f-dep-date','f-dep-time','f-dietary','f-starter','f-entree'];
+    for (const id of requiredIds) {
+      const el = document.getElementById(id);
+      if (!el.value.trim()) { el.classList.add('error'); valid = false; }
+    }
+
+    if (!document.querySelector('input[name="padel"]:checked')) {
+      document.querySelectorAll('.radio-opt').forEach(el => el.classList.add('radio-error'));
+      valid = false;
+    }
+
+    const liquor = document.getElementById('f-liquor');
+    if (!liquor.value) { liquor.classList.add('error'); valid = false; }
+
+    if (liquor.value === 'Other') {
+      const other = document.getElementById('f-liquor-other');
+      if (!other.value.trim()) { other.classList.add('error'); valid = false; }
+    }
+
+    if (!valid) {
+      const err = document.getElementById('form-error');
+      err.classList.add('show');
+      err.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+    return valid;
+  }
+
   async function handleSubmit() {
-    const nameInput = document.getElementById('f-name');
-    const name = nameInput.value.trim();
-    if (!name) { nameInput.classList.add('error'); nameInput.focus(); return; }
-    nameInput.classList.remove('error');
+    if (!validateForm()) return;
 
     const liquorSelect = document.getElementById('f-liquor').value;
     const liquorFinal = liquorSelect === 'Other'
-      ? (document.getElementById('f-liquor-other').value.trim() || 'Other')
+      ? document.getElementById('f-liquor-other').value.trim()
       : liquorSelect;
-    const padelInput = document.querySelector('input[name="padel"]:checked');
 
     const payload = {
-      name,
+      name:            document.getElementById('f-name').value.trim(),
       arrivalFlight:   document.getElementById('f-arr-num').value.trim(),
       arrivalDate:     document.getElementById('f-arr-date').value,
       arrivalTime:     document.getElementById('f-arr-time').value,
@@ -668,8 +764,10 @@ footer p span { color: rgba(255,250,246,0.88); }
       departureDate:   document.getElementById('f-dep-date').value,
       departureTime:   document.getElementById('f-dep-time').value,
       dietary:         document.getElementById('f-dietary').value.trim(),
-      padel:           padelInput ? padelInput.value : 'Not answered',
-      liquor:          liquorFinal || 'Not answered',
+      padel:           document.querySelector('input[name="padel"]:checked').value,
+      liquor:          liquorFinal,
+      starter:         document.getElementById('f-starter').value,
+      entree:          document.getElementById('f-entree').value,
     };
 
     const btn = document.getElementById('submit-btn');
