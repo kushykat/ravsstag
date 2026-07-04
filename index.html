@@ -249,10 +249,23 @@ footer p span { color: rgba(255,250,246,0.88); }
 .form-error.show { display: block; }
 .radio-opt.radio-error { border-color: var(--terra); background: #FFF0EE; }
 
+/* DRESS CODES */
+.dress-bg { background: var(--cream); }
+.dress-venues { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-bottom: 20px; }
+.dress-card { background: var(--chalk); border-radius: 12px; padding: 22px 24px; box-shadow: 0 1px 10px rgba(39,20,8,0.06); }
+.dress-venue-name { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 600; color: var(--text); margin-bottom: 8px; padding-bottom: 8px; border-bottom: 1px solid var(--sand-light); }
+.dress-rule { font-size: 0.86rem; color: var(--text-mid); line-height: 1.6; }
+.dress-general { margin-top: 4px; background: var(--sand-light); border-radius: 12px; padding: 24px 28px; display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.dress-col-title { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 12px; }
+.dress-col-title.wear { color: #5C7040; }
+.dress-col-title.avoid { color: var(--terra); }
+.dress-general-item { font-size: 0.86rem; color: var(--text-mid); line-height: 1.6; padding: 3px 0; }
+
 /* RESPONSIVE */
 @media (max-width: 960px) {
   .apt-grid { grid-template-columns: repeat(2, 1fr); }
   .notes-grid { grid-template-columns: repeat(2, 1fr); }
+  .dress-venues { grid-template-columns: repeat(2, 1fr); }
   .day-row { grid-template-columns: 1fr; gap: 16px; }
   .day-sticky { position: static; }
   .hotel-card { grid-template-columns: 1fr; }
@@ -264,6 +277,8 @@ footer p span { color: rgba(255,250,246,0.88); }
   .section-wrap { padding: 56px 20px; }
   .apt-grid { grid-template-columns: 1fr; }
   .notes-grid { grid-template-columns: 1fr; }
+  .dress-venues { grid-template-columns: 1fr; }
+  .dress-general { grid-template-columns: 1fr; }
   .form-grid { grid-template-columns: 1fr; }
   .fg-full { grid-column: 1; }
   .hero { padding: 80px 24px 80px; min-height: 85vh; }
@@ -448,8 +463,8 @@ footer p span { color: rgba(255,250,246,0.88); }
         <div class="day-events">
           <div class="event-card">
             <div class="event-time">11:00am</div>
-            <div class="event-name">Brunch · Location TBC</div>
-            <div class="event-desc">Cost included. Location confirmed closer to the time. Eat well before heading to the beach club.</div>
+            <div class="event-name">Brunch · El Gaucho de Banús</div>
+            <div class="event-desc">Argentinian grill in Puerto Banús. Set menu at €50 per head — includes a welcome drink, sharing starters, main, dessert, and drinks until pudding. Cost included. Veggies will order à la carte. Eat well before heading to the beach club.</div>
           </div>
           <div class="event-card">
             <div class="event-time">1:00pm – 8:00pm (ish)</div>
@@ -543,10 +558,52 @@ footer p span { color: rgba(255,250,246,0.88); }
     <div class="notes-grid">
       <div class="note-card"><div class="note-icon">🚕</div><div class="note-text">Apartment captains handle all Uber and taxi ordering. Costs go through the kitty and are reimbursed after the trip.</div></div>
       <div class="note-card"><div class="note-icon">🍽️</div><div class="note-text">Not every meal is planned. Feel free to split off and eat — just let the group know so others can join if they fancy it.</div></div>
-      <div class="note-card"><div class="note-icon">👔</div><div class="note-text">Check the dress code at all venues and pack accordingly. Marbella expects smart casual. Don't be the guy in shorts at La Sala.</div></div>
+      <div class="note-card"><div class="note-icon">👔</div><div class="note-text">Each venue has specific dress requirements — full breakdown in the section below. Don't be the guy in shorts at La Sala.</div></div>
       <div class="note-card"><div class="note-icon">🥃</div><div class="note-text">As is tradition — grab a duty free bottle on the way for pre's. Apartment captains will coordinate.</div></div>
       <div class="note-card"><div class="note-icon">📋</div><div class="note-text">Fill in the form below with your flights, dietary needs, padel preference, and liquor preference. Takes 2 minutes.</div></div>
       <div class="note-card"><div class="note-icon">📍</div><div class="note-text">All venues are pinned on a shared Google Map below. Everything within easy reach of the hotel.</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section-wrap dress-bg">
+  <div class="section-inner">
+    <div class="eyebrow">Venue by Venue</div>
+    <h2 class="section-title">Dress Codes</h2>
+    <div class="dress-venues">
+      <div class="dress-card">
+        <div class="dress-venue-name">La Sala — Thursday</div>
+        <div class="dress-rule">Smart beachwear. Smart shorts, linen trousers, polo shirts, and designer or smart trainers.</div>
+      </div>
+      <div class="dress-card">
+        <div class="dress-venue-name">NAO Beach Club — Friday</div>
+        <div class="dress-rule">Smart beachwear. No sportswear including shorts. Swimwear permitted at the pool.</div>
+      </div>
+      <div class="dress-card">
+        <div class="dress-venue-name">Ocean Beach Club — Saturday</div>
+        <div class="dress-rule">Smart beachwear. Shorts, shoes, and shirt required when not at a pool bed or in the pool. Swimwear at the pool.</div>
+      </div>
+      <div class="dress-card">
+        <div class="dress-venue-name">Padel — Saturday</div>
+        <div class="dress-rule">Appropriate sportswear and trainers.</div>
+      </div>
+    </div>
+    <div class="dress-general">
+      <div>
+        <div class="dress-col-title wear">Wear</div>
+        <div class="dress-general-item">Linen shirt, polo, or smart short-sleeve button-up</div>
+        <div class="dress-general-item">Tailored swim shorts or chino shorts</div>
+        <div class="dress-general-item">Clean designer sandals, loafers, or smart white trainers</div>
+        <div class="dress-general-item">Stylish sunglasses and a neat overall appearance</div>
+      </div>
+      <div>
+        <div class="dress-col-title avoid">Avoid</div>
+        <div class="dress-general-item">Football shirts or sports jerseys</div>
+        <div class="dress-general-item">Gym wear or athletic shorts</div>
+        <div class="dress-general-item">Tank tops or vests</div>
+        <div class="dress-general-item">Dirty or worn flip-flops</div>
+        <div class="dress-general-item">Oversized graphic T-shirts</div>
+      </div>
     </div>
   </div>
 </section>
